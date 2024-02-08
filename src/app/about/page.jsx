@@ -1,19 +1,18 @@
 'use client';
-// import Brain from '@/components/brain';
+import Brain from '@/components/brain';
 import { motion, useInView, useScroll } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
 const AboutPage = () => {
   const containerRef = useRef();
+  const experienceRef = useRef();
+  const skillRef = useRef();
 
   const { scrollYProgress } = useScroll({ container: containerRef });
 
-  const skillRef = useRef();
-  // const isSkillRefInView = useInView(skillRef, {once:true});
   const isSkillRefInView = useInView(skillRef, { margin: '-100px' });
 
-  const experienceRef = useRef();
   const isExperienceRefInView = useInView(experienceRef, { margin: '-100px' });
 
   return (
@@ -51,7 +50,7 @@ const AboutPage = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </span>
             {/* BIOGRAPHY SIGN SVG*/}
-            <div className="self-end">
+            {/* <div className="self-end">
               <svg
                 width="185"
                 height="77"
@@ -65,7 +64,7 @@ const AboutPage = () => {
                   strokeWidth="2"
                 />
               </svg>
-            </div>
+            </div> */}
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
@@ -219,7 +218,7 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
-                    2024 - Present
+                    2022 - 2022
                   </div>
                   {/* JOB COMPANY */}
                   <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
@@ -253,7 +252,7 @@ const AboutPage = () => {
                 <div className="w-1/3 ">
                   {/* JOB TITLE */}
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Senior React Developer
+                    Junior React Developer
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
@@ -262,7 +261,7 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
-                    2019 - 2024{' '}
+                    2022 - 2022{' '}
                   </div>
                   {/* JOB COMPANY */}
                   <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
@@ -285,7 +284,7 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
-                    2010 - 2019{' '}
+                    2021 - Present{' '}
                   </div>
                 </div>
                 {/* CENTER */}
@@ -304,7 +303,7 @@ const AboutPage = () => {
         </div>
         {/* SVG CONTAINER */}
         <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-1/2">
-          {/* <Brain scrollYProgress={scrollYProgress} /> */}
+          <Brain scrollYProgress={scrollYProgress} />
         </div>
       </div>
     </motion.div>
